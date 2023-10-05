@@ -16,7 +16,7 @@
 #include "can-232.h"
 #include "SoftwareSerial.h"
 
-#define DEBUG_MODE
+//#define DEBUG_MODE
 
 void setup() {
 	  Serial.begin(LW232_DEFAULT_BAUD_RATE); // default COM baud rate is 115200. 
@@ -30,8 +30,9 @@ void setup() {
 
 //        Can232::init();             // rate and clock = LW232_DEFAULT_CAN_RATE and LW232_DEFAULT_CLOCK_FREQ
 //        Can232::init(CAN_125KBPS);  // rate = 125, clock = LW232_DEFAULT_CLOCK_FREQ
-    Can232::init(CAN_125KBPS, MCP_16MHz); // set default rate you need here and clock frequency of CAN shield. Typically it is 16MHz, but on some MCP2515 + TJA1050 it is 8Mhz
-
+//    Can232::init(CAN_125KBPS, MCP_16MHz); // set default rate you need here and clock frequency of CAN shield. Typically it is 16MHz, but on some MCP2515 + TJA1050 it is 8Mhz
+    Can232::init(CAN_500KBPS, MCP_8MHz);
+//    Can232::init(CAN_250KBPS, MCP_8MHz);
 
     // optional custom packet filter to reduce number of messages comingh through to canhacker
     // Can232::setFilter(myCustomAddressFilter); 
@@ -69,4 +70,3 @@ void loop() {
 void serialEvent() {
     Can232::serialEvent();
 }
-

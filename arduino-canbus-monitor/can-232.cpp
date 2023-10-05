@@ -15,7 +15,7 @@
 #include "mcp_can.h"
 #include "can-232.h"
 
-#define LOGGING_ENABLED
+//#define LOGGING_ENABLED
 
 #ifdef LOGGING_ENABLED
 #define dbg_begin(x) debug.begin(x)
@@ -27,10 +27,12 @@
 #define DEBUG_TX_PIN 9
 #else
 #define dbg_begin(x)
-#define dbg0(x) 
-#define dbg1(x) 
-#define dbg2(x,y)
-#define dbgH(x)
+//#define dbg0(x)
+//#define dbg1(x)
+#define dbg0(x)     Serial.println(x)
+#define dbg1(x)     Serial.println(x)
+#define dbg2(x,y)   Serial.println(x);Serial.println(y)
+#define dbgH(x)     Serial.println(x)
 #endif
 
 #ifdef LOGGING_ENABLED
