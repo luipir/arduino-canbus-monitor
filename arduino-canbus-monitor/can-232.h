@@ -142,7 +142,8 @@
 
 #define LW232_DEFAULT_BAUD_RATE        115200
 #define LW232_DEFAULT_CAN_RATE         CAN_500KBPS
-#define LW232_DEFAULT_CLOCK_FREQ       MCP_16MHz
+//#define LW232_DEFAULT_CLOCK_FREQ       MCP_16MHz
+#define LW232_DEFAULT_CLOCK_FREQ       MCP_8MHz
 
 #define LW232_CAN_BAUD_NUM             0x0a
 #define LW232_UART_BAUD_NUM            0x07
@@ -176,7 +177,8 @@ private:
     MCP_CAN lw232CAN = MCP_CAN(LW232_CAN_BUS_SHIELD_CS_PIN);
 
     INT8U lw232CanSpeedSelection = CAN_83K3BPS;
-    INT8U lw232McpModuleClock = MCP_16MHz;
+    //INT8U lw232McpModuleClock = MCP_16MHz;
+    INT8U lw232McpModuleClock = MCP_8MHz;
     INT8U lw232CanChannelMode = LW232_STATUS_CAN_CLOSED;
     INT8U lw232LastErr = LW232_OK;
 
